@@ -169,6 +169,9 @@ DATABASES = {
         'DATABASE_URL': os.getenv('URL'),
         
         
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
        
 
     }
