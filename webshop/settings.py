@@ -164,6 +164,7 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 #}
 
 DATABASES = {
+    {
    'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': os.environ.get("DB_NAME"),
         'USER': os.environ.get("DB_USER"),
