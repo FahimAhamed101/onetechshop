@@ -25,8 +25,8 @@ SECRET_KEY = 'django-insecure-!ha15@q#p11dbwkd$(rev&hutx2ohqrwfr0rc_d^sox@ub)ee7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-#ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+#ALLOWED_HOSTS = ['*']
 
 # Application definition
 
@@ -167,6 +167,7 @@ DATABASES = {
    'default': {
         'ENGINE': "django.db.backends.postgresql_psycopg2",
         'HOST': os.getenv('HOST'),
+        'URL': os.getenv('URL'),
         'NAME': os.getenv('NAME'),
         'USER': os.getenv('USER'),
         'PASSWORD': os.getenv('PASSWORD'),
