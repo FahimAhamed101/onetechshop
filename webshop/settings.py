@@ -227,7 +227,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 
-DJANGO_SU_NAME = config('DJANGO_SU_NAME')
+"""DJANGO_SU_NAME = config('DJANGO_SU_NAME')
 DJANGO_SU_EMAIL = config('DJANGO_SU_EMAIL')
 DJANGO_SU_PASSWORD = config('DJANGO_SU_PASSWORD')
 
@@ -240,4 +240,4 @@ try:
 except IntegrityError:
     print(f"Super User with username {DJANGO_SU_NAME} is already present")
 except Exception as e:
-    print(e)
+    print(e)"""
