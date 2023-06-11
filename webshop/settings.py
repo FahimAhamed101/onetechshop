@@ -226,4 +226,18 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+DJANGO_SU_NAME = config('DJANGO_SU_NAME')
+DJANGO_SU_EMAIL = config('DJANGO_SU_EMAIL')
+DJANGO_SU_PASSWORD = config('DJANGO_SU_PASSWORD')
+
+try:
+    superuser = User.objects.create_superuser(
+        username=DJANGO_SU_NAME,
+        email=DJANGO_SU_EMAIL,
+        password=DJANGO_SU_PASSWORD)
+    superuser.save()
+except IntegrityError:
+    print(f"Super User with username {DJANGO_SU_NAME} is already present")
+except Exception as e:
+    print(e)
