@@ -57,7 +57,7 @@ LOGIN_REDIRECT_URL = "/"
  
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -66,7 +66,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SOCIALACCOUNT_LOGIN_ON_GET =True
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS =True
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
