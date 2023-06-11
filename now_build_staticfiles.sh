@@ -6,8 +6,8 @@
 pip install -r requirements.txt
 
 # Build staticfiles
-python3.10 manage.py collectstatic
-python3.10 manage.py makemigrations
-python3.10 manage.py migrate --run-syncdb
-python3.10 manage.py makemigrations sessions
-python3.10 manage.py migrate sessions
+python manage.py collectstatic
+python manage.py makemigrations
+python manage.py migrate --run-syncdb
+python manage.py makemigrations sessions
+python manage.py migrate sessions
