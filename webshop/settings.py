@@ -49,9 +49,10 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
 'allauth.socialaccount.providers.facebook',  
-'cloudinary_storage',
+
    
     'cloudinary',
+    'cloudinary_storage',
 ]
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
