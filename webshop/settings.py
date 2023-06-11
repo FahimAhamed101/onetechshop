@@ -48,8 +48,18 @@ INSTALLED_APPS = [
         'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
-'allauth.socialaccount.providers.facebook',
+'allauth.socialaccount.providers.facebook',  
+'cloudinary_storage',
+   
+    'cloudinary',
 ]
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'fahim1213456',
+    'API_KEY': '554889398149233',
+    'API_SECRET': 'xOh9Pctuw1UhBuRrj_XuP79ubbA'
+}
 SITE_ID = 5
 ACCOUNT_EMAIL_REQUIRED=True ,
 ACCOUNT_USERNAME_REQURIED=True
@@ -148,13 +158,13 @@ MESSAGE_TAGS = {
     messages.ERROR: 'danger',
 }
 CROS_ORIGIN_ALLOW_ALL = True
-"""EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # SMTP configuration
 EMAIL_HOST = config('EMAIL_HOST')
 EMAIL_PORT = config('EMAIL_PORT', cast=int)
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
-EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)"""
+EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 """DATABASES = {
@@ -227,7 +237,9 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 
 
-"""DJANGO_SU_NAME = config('DJANGO_SU_NAME')
+"""
+from django.contrib.auth.models import User
+DJANGO_SU_NAME = config('DJANGO_SU_NAME')
 DJANGO_SU_EMAIL = config('DJANGO_SU_EMAIL')
 DJANGO_SU_PASSWORD = config('DJANGO_SU_PASSWORD')
 
