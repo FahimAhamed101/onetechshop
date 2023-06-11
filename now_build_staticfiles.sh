@@ -9,5 +9,5 @@ pip install -r requirements.txt
 python3.9 manage.py collectstatic
 python3.9 manage.py makemigrations
 python3.9 manage.py migrate --run-syncdb
-python manage.py makemigrations sessions
-python manage.py migrate sessions
+python3.9 manage.py makemigrations sessions
+python3.9 manage.py migrate sessions
