@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
+import dj_database_url
 from decouple import config
 from pathlib import Path
 import os
@@ -25,9 +26,9 @@ SECRET_KEY = 'django-insecure-!ha15@q#p11dbwkd$(rev&hutx2ohqrwfr0rc_d^sox@ub)ee7
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['.vercel.app', '.now.sh']
+ALLOWED_HOSTS = ['.vercel.app', '.now.sh','127.0.0.1']
 #ALLOWED_HOSTS = ['*']
-
+CSRF_TRUSTED_ORIGINS = ['https://onetechshop-opuzg67t3-fahimahamed101.vercel.app']
 # Application definition
 
 INSTALLED_APPS = [
@@ -56,6 +57,7 @@ LOGIN_REDIRECT_URL = "/"
  
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -64,7 +66,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 SOCIALACCOUNT_LOGIN_ON_GET =True
 ACCOUNT_AUTHENTICATED_LOGIN_REDIRECTS =True
 SOCIAL_AUTH_REDIRECT_IS_HTTPS = True
@@ -178,9 +180,9 @@ EMAIL_USE_TLS = config('EMAIL_USE_TLS', cast=bool)"""
 
     }
 }"""
-import dj_database_url
+
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv('DATABASE_URL'), conn_max_age=600),
+    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'), conn_max_age=600),
 }
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
